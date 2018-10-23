@@ -1,0 +1,155 @@
+# while循环结构
+
+'''
+#1. 循环输出1~10的值：
+
+i=1
+while i<=10:
+    print(i)
+    i+=1
+    
+'''
+
+'''
+#2. 循环输出10~1的值
+i=10
+while i>=1:
+    print(i,end=" ")
+    i-=1
+    
+'''
+
+'''
+#3. 计算1~100的累加
+i=1
+sum=0
+while i<=100:
+    #print(i,end=" ")
+    sum+=i #将每次循环的i累加到sum变量中
+    i+=1
+
+print("100的累加值：",sum)
+'''
+
+# 死循环的使用
+
+while True:
+    k = input("请输入一个值：")
+    print("内容：",k)
+    if k=='q':
+        break #跳出循环
+
+# for in 循环结构
+
+'''
+# 遍历字串
+for i in "abcd":
+    print(i)
+    
+'''
+'''
+# 遍历列表
+for i in [10,20,30]:
+    print(i)
+'''
+
+'''
+# 遍历元组
+for i in (10,20,30):
+    print(i)
+
+# 遍历集合
+for i in {40,50,60}:
+    print(i)
+
+# 遍历字典
+a = {'name':'lisi','age':20,'sex':'man'}
+for i in a:
+    print(i,":",a[i])
+'''
+
+# 遍历嵌套数据结构
+a=[("a","AAAA"),("b","BBB"),('c','CCCC')]
+for v1,v2 in a:
+    print(v1,"=>",v2)
+
+# range()的使用
+
+# 循环输出0~9的值：
+for i in range(10):
+    print(i,end=" ")
+
+print("")
+
+# 循环输出2~6值：
+for i in range(2,7):
+    print(i,end=" ")
+print("")
+
+
+# 循环输出0~50的值，递增5
+for i in range(0,51,5):
+    print(i,end="  ")
+
+print("")
+
+#输出10~1的值
+for i in range(10,0,-1):
+    print(i,end=" ")
+    
+print(" ")
+
+#使用range（）和len（）结合遍历输出容器类的数据
+a = ["aaa","bbb","ccc"]
+for i in range(len(a)):
+    print(i,"=>",a[i])
+  
+# 循环输出九九乘法表
+'''
+# 循环输出1~9的值
+for i in range(1,10):
+    print(i,end=" ")
+    
+# 循环9行
+for j in range(1,10):
+    print("")
+'''
+'''
+# 循环9行，输出1~9的值
+for j in range(1,10):
+    for i in range(1,10):
+        print(i,end=" ")
+    print("")
+'''
+
+'''
+# 循环9行，输出1~9的值, 三角形
+for j in range(1,10):
+    for i in range(1,j+1):
+        print(i,end=" ")
+    print("")
+'''
+# break、continue、else和pass的使用
+
+'''
+# 循环0~9的值
+for i in range(10):
+    if i==6:
+        #break # 退出循环
+        continue # 跳过本次循环，继续后面的循环执行
+    print(i)
+'''
+
+# 数据查找
+a=[10,20,30,40]
+m=300
+for i in a:
+    if m==i:
+        print("存在")
+        break
+else:
+    print("不存在！")
+
+
+for i in a:
+    pass

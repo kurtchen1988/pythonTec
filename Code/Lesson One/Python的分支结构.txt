@@ -1,0 +1,54 @@
+#单一分支结构
+
+'''
+print("开始。。。")
+
+if 100>50:
+    print("选择性语句的执行")
+    print("选择性语句的执行")
+    print("选择性语句的执行")
+
+print("结束。。。")
+'''
+
+#双向分支结构
+'''
+num=int(input("请输入一个成绩："))
+
+if num>=60:
+    print("成绩及格！")
+else:
+    print("考试未通过！")
+
+'''
+
+# 多分支判断结构
+
+'''
+num=int(input("请输入一个成绩："))
+
+if num>=90:
+    print("成绩优秀！")
+elif num>=75:
+    print("成绩良好！")
+elif num>=60:
+    print("成绩及格！")
+else:
+    print("考试未通过！")
+'''
+
+# 巢状分支结构
+
+
+num = int(input("请输入一个成绩："))
+
+if num>=75:
+    if num>=90:
+        print("成绩优秀！")
+    else:
+        print("成绩良好！")
+else:
+    if num>=60:
+        print("成绩及格！")
+    else:
+        print("成绩不及格！")
