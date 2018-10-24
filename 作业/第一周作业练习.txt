@@ -1,0 +1,19 @@
+1，安装好Git，Python3环境
+
+2，注册Github并关注我（在我的主页：https://github.com/kurtchen1988?tab=following，头像下点击Follow即可）
+
+3，设置好自己的代码仓库：
+首先在自己的Github主页右上角点击+，选择New repository
+填入名称（在Repository name输入英文名称），选择公共开放（Public）
+选择Create repository。
+根据说明初始化仓库：
+git init （初始化仓库）
+git add . （将文件夹内内容加入缓存）
+git commit -m "first commit" （提交并添加提交注释，"first commit" 为注释内容）
+git remote add origin https://xxxxxx （设置远程Git仓库地址，https://xxxxxx为仓库地址）
+git push -u origin master （将缓存之内的内容推入Git仓库）
+获取我写的资料，用git clone https://github.com/kurtchen1988/pythonTec.git 命令即可
+大家可以在：https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000 看到详细的Git入门
+如果觉得英语的用起来麻烦，可以注册码云（https://gitee.com），同样加我为好友（https://gitee.com/BanTu）
+
+4，将PPT中第3-20页的代码全部练习一遍，并且用txt保存并上传至自己的Git仓库中
