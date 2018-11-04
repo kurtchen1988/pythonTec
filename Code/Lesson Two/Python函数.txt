@@ -1,0 +1,116 @@
+#函数的定义方式
+
+'''
+# 基本格式定义
+
+#定义一个函数aa
+def aa():
+    print("1.aaaaaaa")
+    print("2.aaaaaaa")
+    print("3.aaaaaaa")
+
+#函数的调用
+aa()
+aa()
+aa()
+'''
+
+'''
+# 定义带有参数的函数
+
+def myadd(m1,m2):
+    print(m1+m2)
+
+myadd(10)
+'''
+
+'''
+# 带有默认值得参数函数
+
+def stu(name='zhangsan',age=20,sex='man'):
+    print("姓名：{}；年龄：{}；性别：{}".format(name,age,sex))
+
+stu()
+stu('lisi')
+stu('wangwu',30)
+stu('zhaoliu',25,'women')
+'''
+
+'''
+# 带关键字的函数
+
+def stu(name='zhangsan',age=20,sex='man'):
+    print("姓名：{}；年龄：{}；性别：{}".format(name,age,sex))
+
+# 可以有效的防止参数传错
+stu(name='zhaoliu',sex='women',age=25)
+'''
+
+'''
+# 非关键字收集参数
+def demo(*arg):
+    #print(arg)
+    sum=0
+    for i in arg:
+        sum+=i
+    print("累加值：",sum)
+
+    
+demo(10,20,30,40)
+'''
+
+'''
+#带关键字收集参数
+def demo(m,**arg):
+    print(m)
+    print(arg)
+
+
+demo(10,name="zhangsan",age=20)
+
+'''
+
+# 定义一个计算指定数值累加的函数
+def sum(m):
+    '''
+    这是一个计算指定数值的累加函数
+    参数一个，int类型，表示要累加的数值
+    返回值是一个累加结果 int类型
+    '''
+    total=0
+    for i in range(0,m+1):
+        total+=i
+    #print(total) #直接输出结果
+    return total #返回结果
+
+a = sum(10)
+print("10的累加：",a)
+
+print("50的累加：",sum(50))
+print("100的累加：",sum(100))
+
+# 函数的局部变量和全局变量
+
+#函数外定义的称全局变量
+name="zhangsan"
+def fun():
+    global name
+    print("函数内输出全局：",name)
+    name = "lisi"
+    age=30 #局部变量
+    age += 2
+    print("函数内容输出局部：",age)
+
+
+fun()
+fun()
+print("函数外输出全局变量：",name)
+#print("函数外容输出局部：",age)
+
+
+
+# 定义匿名函数
+sum = lambda v1,v2: v1+v2
+
+print(sum(10,20))
+print(sum(100,200))
