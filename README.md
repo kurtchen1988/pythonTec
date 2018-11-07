@@ -40,7 +40,7 @@
 <tr>
 <th>晨晓</th>
 <th>4</th>
-<th>4</th>
+<th>4.5</th>
 <th></th>
 </tr>
 <tr>
@@ -58,7 +58,7 @@
 <tr>
 <th>凌秋</th>
 <th>4</th>
-<th>未交</th>
+<th>5</th>
 <th></th>
 </tr>
 <tr>
