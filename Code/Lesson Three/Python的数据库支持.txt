@@ -1,0 +1,149 @@
+#测试
+
+#导入pymsql模块
+import pymysql
+
+#获取数据库连接
+db = pymysql.connect(host="localhost",user="root",password="",db="mydb",charset="utf8")
+
+#创建游标对象
+cursor = db.cursor()
+
+#执行sql操作
+cursor.execute("select version()")
+
+#解析结果
+data = cursor.fetchone()
+print(data)
+
+#关闭数据库连接
+db.close()
+
+
+#查询stu表的数据信息
+#
+#导入pymsql模块
+import pymysql
+
+#获取数据库连接
+db = pymysql.connect(host="localhost",user="root",password="",db="mydb",charset="utf8")
+
+#创建游标对象
+cursor = db.cursor()
+#定义sql语句
+#sql = "select * from stu"
+sql = "select * from stu where classid='%s'"%("python03")
+
+try:
+	#执行sql操作
+	cursor.execute(sql)
+
+	print("结果条数：",cursor.rowcount)
+	#解析结果(遍历结果)
+	'''
+	# 使用fetchone（）
+	while True:
+		data = cursor.fetchone()
+		if data == None:
+			break;
+		print(data)
+	'''
+	alist = cursor.fetchall()
+	for vo in alist:
+		print(vo)
+except Exception as err:
+	print("SQL执行错误！原因：",err)
+
+#关闭数据库连接
+db.close()
+
+
+#添加stu表的数据信息
+#
+#导入pymsql模块
+import pymysql
+
+#获取数据库连接
+db = pymysql.connect(host="localhost",user="root",password="",db="mydb",charset="utf8")
+
+#创建游标对象
+cursor = db.cursor()
+#定义sql语句
+data = ("uu101",20,'w','python04')
+sql = "insert into stu(name,age,sex,classid) values('%s','%d','%s','%s')"%(data)
+
+try:
+	#执行sql操作
+	m = cursor.execute(sql)
+	# 事务提交
+	db.commit()
+	#print("成功添加条数：",cursor.rowcount)
+	print("成功添加条数：",m)
+	
+except Exception as err:
+	#事务回滚
+	db.rollback()
+	print("SQL执行错误！原因：",err)
+
+#关闭数据库连接
+db.close()
+
+
+#删除stu表的数据信息
+#
+#导入pymsql模块
+import pymysql
+
+#获取数据库连接
+db = pymysql.connect(host="localhost",user="root",password="",db="mydb",charset="utf8")
+
+#创建游标对象
+cursor = db.cursor()
+#定义sql语句
+sql = "delete from stu where id=%d"%(18)
+
+try:
+	#执行sql操作
+	m = cursor.execute(sql)
+	# 事务提交
+	db.commit()
+	print("成功删除条数：",m)
+	
+except Exception as err:
+	#事务回滚
+	db.rollback()
+	print("SQL执行错误！原因：",err)
+
+#关闭数据库连接
+db.close()
+
+
+#修改stu表的数据信息
+#
+#导入pymsql模块
+import pymysql
+
+#获取数据库连接
+db = pymysql.connect(host="localhost",user="root",password="",db="mydb",charset="utf8")
+
+#创建游标对象
+cursor = db.cursor()
+#定义sql语句
+data = ("uu200",25,'m','python05',16)
+sql = "update stu set name='%s',age='%d',sex='%s',classid='%s' where id=%d"%(data)
+
+try:
+	#执行sql操作
+	m = cursor.execute(sql)
+	# 事务提交
+	db.commit()
+	
+	print("成功修改条数：",m)
+	
+except Exception as err:
+	#事务回滚
+	db.rollback()
+	print("SQL执行错误！原因：",err)
+
+#关闭数据库连接
+db.close()
